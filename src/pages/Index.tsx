@@ -132,9 +132,8 @@ const Index = () => {
         onLogout={handleLogout}
         showRegistrationReview={isStaffOrAdmin}
       />
-      
-      <main className="pt-16">
-        {currentView === 'student-dashboard' && <StudentDashboard />}
+        <main className="pt-16">
+        {currentView === 'student-dashboard' && <StudentDashboard onNavigate={setCurrentView} />}
         {currentView === 'staff-dashboard' && (
           <StaffDashboard onNavigate={setCurrentView} />
         )}

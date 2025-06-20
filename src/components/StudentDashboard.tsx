@@ -3,15 +3,18 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Home, Users, Clock, Calendar, MapPin, User, Phone, Mail, GraduationCap, MessageSquare } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
 
-const StudentDashboard = () => {
+const StudentDashboard = ({ onNavigate }: { onNavigate?: (view: string) => void }) => {
   const [studentData, setStudentData] = useState<any>(null);
   const [roomData, setRoomData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showComingSoonDialog, setShowComingSoonDialog] = useState(false);
+  const [comingSoonTitle, setComingSoonTitle] = useState('');
   const { toast } = useToast();
 
   useEffect(() => {
@@ -109,9 +112,18 @@ const StudentDashboard = () => {
         title: "Error",
         description: "Failed to load your data. Please try again.",
         variant: "destructive"
-      });
-    } finally {
+      });    } finally {
       setLoading(false);
+    }
+  };
+
+  const handleComingSoon = (title: string) => {
+    setComingSoonTitle(title);
+    setShowComingSoonDialog(true);
+  };
+  const handleNavigateToTab = (tabName: string) => {
+    if (onNavigate) {
+      onNavigate(tabName);
     }
   };
 
@@ -295,11 +307,12 @@ const StudentDashboard = () => {
               </div>
             )}
           </CardContent>
-        </Card>
-
-        {/* Quick Actions */}
+        </Card>        {/* Quick Actions */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="bg-gradient-to-br from-purple-500 to-pink-500 text-white shadow-xl border-0 hover:shadow-2xl transition-shadow cursor-pointer">
+          <Card 
+            className="bg-gradient-to-br from-purple-500 to-pink-500 text-white shadow-xl border-0 hover:shadow-2xl transition-shadow cursor-pointer"
+            onClick={() => handleComingSoon('View Roommates')}
+          >
             <CardContent className="p-6 text-center">
               <Users className="w-12 h-12 mx-auto mb-4 text-purple-200" />
               <h3 className="font-semibold text-lg mb-2">View Roommates</h3>
@@ -307,7 +320,10 @@ const StudentDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-teal-500 to-cyan-500 text-white shadow-xl border-0 hover:shadow-2xl transition-shadow cursor-pointer">
+          <Card 
+            className="bg-gradient-to-br from-teal-500 to-cyan-500 text-white shadow-xl border-0 hover:shadow-2xl transition-shadow cursor-pointer"
+            onClick={() => handleComingSoon('Events')}
+          >
             <CardContent className="p-6 text-center">
               <Calendar className="w-12 h-12 mx-auto mb-4 text-teal-200" />
               <h3 className="font-semibold text-lg mb-2">Events</h3>
@@ -315,7 +331,10 @@ const StudentDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-indigo-500 to-blue-500 text-white shadow-xl border-0 hover:shadow-2xl transition-shadow cursor-pointer">
+          <Card 
+            className="bg-gradient-to-br from-indigo-500 to-blue-500 text-white shadow-xl border-0 hover:shadow-2xl transition-shadow cursor-pointer"
+            onClick={() => handleNavigateToTab('announcements')}
+          >
             <CardContent className="p-6 text-center">
               <MessageSquare className="w-12 h-12 mx-auto mb-4 text-indigo-200" />
               <h3 className="font-semibold text-lg mb-2">Announcements</h3>
@@ -323,7 +342,10 @@ const StudentDashboard = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-gradient-to-br from-green-500 to-emerald-500 text-white shadow-xl border-0 hover:shadow-2xl transition-shadow cursor-pointer">
+          <Card 
+            className="bg-gradient-to-br from-green-500 to-emerald-500 text-white shadow-xl border-0 hover:shadow-2xl transition-shadow cursor-pointer"
+            onClick={() => handleNavigateToTab('requests')}
+          >
             <CardContent className="p-6 text-center">
               <Clock className="w-12 h-12 mx-auto mb-4 text-green-200" />
               <h3 className="font-semibold text-lg mb-2">Requests</h3>
@@ -331,6 +353,37 @@ const StudentDashboard = () => {
             </CardContent>
           </Card>
         </div>
+
+        {/* Coming Soon Dialog */}
+        <Dialog open={showComingSoonDialog} onOpenChange={setShowComingSoonDialog}>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle className="text-center text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                {comingSoonTitle}
+              </DialogTitle>
+            </DialogHeader>
+            <div className="text-center py-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-10 h-10 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Coming Soon!</h3>
+              <p className="text-gray-600 mb-4">
+                This feature is currently under development and will be available soon.
+              </p>
+              <p className="text-sm text-gray-500">
+                Thank you for your patience!
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <Button 
+                onClick={() => setShowComingSoonDialog(false)}
+                className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+              >
+                Got it!
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );

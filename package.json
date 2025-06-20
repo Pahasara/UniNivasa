@@ -80,5 +80,17 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
-  }
+  },
+  "description": "**URL**: https://lovable.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d",
+  "main": "eslint.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-Loopback/UniNivasa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Team-Loopback/UniNivasa/issues"
+  },
+  "homepage": "https://github.com/Team-Loopback/UniNivasa#readme"
 }

@@ -87,13 +87,15 @@ const Auth = ({ onAuthSuccess }: AuthProps) => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md">
-        <CardHeader className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-            <Home className="w-8 h-8 text-white" />
+      <Card className="w-full max-w-md">        <CardHeader className="text-center">          <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+            <img 
+              src="/favicon.ico" 
+              alt="Uniනිවස. Logo" 
+              className="w-16 h-16" 
+            />
           </div>
           <CardTitle className="text-2xl">
-            {isLogin ? 'Welcome Back' : 'Join HostelHub'}
+            {isLogin ? 'Welcome Back' : 'Join Uniනිවස.'}
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">

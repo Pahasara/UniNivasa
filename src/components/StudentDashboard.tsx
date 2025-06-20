@@ -311,7 +311,7 @@ const StudentDashboard = () => {
             <CardContent className="p-6 text-center">
               <Calendar className="w-12 h-12 mx-auto mb-4 text-teal-200" />
               <h3 className="font-semibold text-lg mb-2">Events</h3>
-              <p className="text-teal-100 text-sm">Upcoming hostel events</p>
+              <p className="text-teal-100 text-sm">Upcoming university residence events</p>
             </CardContent>
           </Card>
 

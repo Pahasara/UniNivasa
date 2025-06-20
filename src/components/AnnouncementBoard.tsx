@@ -221,7 +221,7 @@ const AnnouncementBoard = ({ userRole }: AnnouncementBoardProps) => {
             Announcements
           </h1>
           <p className="text-xl text-gray-600 font-medium">
-            Stay updated with important hostel information
+            Stay updated with important university residence information
           </p>
         </div>
 

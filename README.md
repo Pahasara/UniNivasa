@@ -1,22 +1,22 @@
-# Welcome to your Lovable project
+# Welcome to your UniNivasa project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d
+**URL**: https://uninivasa.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d
 
 ## How can I edit this code?
 
 There are several ways of editing your application.
 
-**Use Lovable**
+**Use UniNivasa**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d) and start prompting.
+Simply visit the [UniNivasa Project](https://uninivasa.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
+Changes made via UniNivasa will be committed automatically to this repo.
 
 **Use your preferred IDE**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in UniNivasa.
 
 The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
@@ -62,12 +62,12 @@ This project is built with:
 
 ## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d) and click on Share -> Publish.
+Simply open [UniNivasa](https://uninivasa.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d) and click on Share -> Publish.
 
-## Can I connect a custom domain to my Lovable project?
+## Can I connect a custom domain to my UniNivasa project?
 
 Yes, you can!
 
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Read more here: [Setting up a custom domain](https://docs.uninivasa.dev/tips-tricks/custom-domain#step-by-step-guide)

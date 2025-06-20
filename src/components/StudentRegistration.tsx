@@ -167,11 +167,10 @@ const StudentRegistration = ({ user }: StudentRegistrationProps) => {
         <Card className="max-w-2xl mx-auto">
           <CardHeader className="text-center">
             <CardTitle className="text-2xl text-green-600">Registration Approved!</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center space-y-4">
+          </CardHeader>          <CardContent className="text-center space-y-4">
             <CheckCircle className="w-16 h-16 text-green-600 mx-auto" />
-            <p className="text-lg">Welcome to HostelHub! Your registration has been approved.</p>
-            <p className="text-gray-600">You now have full access to the hostel management system.</p>
+            <p className="text-lg">Welcome to Uniනිවස.! Your registration has been approved.</p>
+            <p className="text-gray-600">You now have full access to the university residence management system.</p>
           </CardContent>
         </Card>
       </div>

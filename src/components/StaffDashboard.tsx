@@ -113,7 +113,7 @@ const StaffDashboard = ({ onNavigate }: StaffDashboardProps) => {
             Staff Dashboard
           </h1>
           <p className="text-xl text-gray-600 font-medium">
-            Hostel Management Control Center
+            University Residence Management Control Center
           </p>
         </div>
 
@@ -247,7 +247,7 @@ const StaffDashboard = ({ onNavigate }: StaffDashboardProps) => {
               <CardContent className="p-8 text-center">
                 <MessageSquare className="w-16 h-16 mx-auto mb-4 text-green-200" />
                 <h3 className="font-bold text-xl mb-2">Announcements</h3>
-                <p className="text-green-100">Manage hostel announcements</p>
+                <p className="text-green-100">Manage university residence announcements</p>
               </CardContent>
             </Card>
 

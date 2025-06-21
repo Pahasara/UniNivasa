@@ -1,7 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import RoomCard from "@/components/room/RoomCard";
-import "@testing-library/jest-dom";
 import { vi } from "vitest";
 
 vi.mock("@/components/room/StudentAssignDialog", () => ({

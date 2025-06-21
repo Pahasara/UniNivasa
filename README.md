@@ -1,73 +1,154 @@
-# Welcome to your UniNivasa project
+# UniNivasa - University Room Management System
 
-## Project info
+A modern React TypeScript application for managing university dormitory rooms and student assignments.
 
-**URL**: https://uninivasa.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d
+## 🚀 Project Overview
 
-## How can I edit this code?
+UniNivasa is a comprehensive room management system designed for universities to efficiently manage dormitory rooms, student assignments, and administrative tasks. Built with modern web technologies and following best practices for scalability and maintainability.
 
-There are several ways of editing your application.
+**Project URL**: [https://uninivasa.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d](https://uninivasa.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d)
 
-**Use UniNivasa**
+## ✨ Features
 
-Simply visit the [UniNivasa Project](https://uninivasa.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d) and start prompting.
+- **Room Management**: Search, filter, and manage dormitory rooms
+- **Student Assignment**: Assign students to available rooms
+- **Real-time Updates**: Live room occupancy tracking
+- **Admin Dashboard**: Comprehensive administrative controls
+- **Staff Portal**: Staff-specific room management tools
+- **Student Portal**: Student registration and room requests
+- **Responsive Design**: Works seamlessly on all devices
 
-Changes made via UniNivasa will be committed automatically to this repo.
+## 🛠️ Technologies Used
 
-**Use your preferred IDE**
+- **Frontend Framework**: React
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **UI Components**: shadcn/ui
+- **Styling**: Tailwind CSS
+- **State Management**: React Query
+- **Routing**: React Router DOM
+- **Backend**: Supabase
+- **Form Handling**: React Hook Form + Zod validation
+- **Icons**: Lucide React
+- **Testing**: Vitest + React Testing Library
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in UniNivasa.
+## 🧪 Testing
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+This project includes a comprehensive testing suite with:
 
-Follow these steps:
+### Test Coverage
+- **Unit Tests**: Individual component and hook testing
+- **Integration Tests**: Component interaction testing
+- **Type Tests**: TypeScript interface validation
+- **Mock Services**: API and database mocking
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Testing Tools
+- **Vitest**: Fast unit test runner
+- **React Testing Library**: Component testing utilities
+- **MSW (Mock Service Worker)**: API mocking
+- **Jest DOM**: Additional DOM testing matchers
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 🚀 Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/Team-Loopback/UniNivasa.git
+cd UniNivasa
+```
+
+2. **Install dependencies**
+```bash
+npm install
+```
+
+3. **Start development server**
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. **Run tests**
+```bash
+npx vitest run
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
+### Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+├── public/                 # Static assets
+├── src/
+│   ├── components/        # React components
+│   │   ├── ui/           # shadcn/ui components
+│   │   └── room/         # Room-specific components
+│   ├── hooks/            # Custom React hooks
+│   ├── lib/              # Utility libraries
+│   ├── pages/            # Page components
+│   ├── types/            # TypeScript type definitions
+│   └── integrations/     # External service integrations
+├── supabase/             # Database migrations
+└── tests/                # Additional test files
+```
 
-## What technologies are used for this project?
+## 📱 Deployment
 
-This project is built with:
+### UniNivasa Platform
+Simply open UniNivasa and click on **Share → Publish**.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Code Quality
+- Write TypeScript for type safety
+- Include unit tests for new features
+- Follow the existing code style
+- Use semantic commit messages
 
-## How can I deploy this project?
+### Custom Domain
+To connect a custom domain:
+1. Navigate to **Project > Settings > Domains**
+2. Click **Connect Domain**
+3. Follow the setup instructions
 
-Simply open [UniNivasa](https://uninivasa.dev/projects/94bd537a-a482-40fc-b623-d5a6f6420f6d) and click on Share -> Publish.
+[Read more about custom domains](https://docs.uninivasa.dev/domains)
 
-## Can I connect a custom domain to my UniNivasa project?
+## 📊 Features
 
-Yes, you can!
+### Room Management
+- Search and filter rooms by multiple criteria
+- Real-time occupancy tracking
+- Room status management (Available, Occupied, Maintenance)
+- Bulk operations for administrative tasks
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Student Management
+- Student registration system
+- Assignment tracking
+- Profile management
+- Request system for room changes
 
-Read more here: [Setting up a custom domain](https://docs.uninivasa.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Administrative Tools
+- Dashboard with analytics
+- User role management
+- System announcements
+- Maintenance scheduling
+
+## 📄 License
+
+This project is licensed under the MIT License.
+
+## 🆘 Support
+
+For support and questions:
+- GitHub Issues: [Create an issue](https://github.com/Team-Loopback/Uniනිවස./issues)
+- Documentation: [Project Wiki](https://github.com/Team-Loopback/Uniනිවස./wiki)
+
+## 👥 Contributors
+
+- Team Loopback
+
+---
+
+Built with ❤️ using React, TypeScript, and modern web technologies.

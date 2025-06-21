@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Users, Home, Settings, Calendar, MessageSquare, UserCheck, ClipboardList, BarChart3, AlertTriangle } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Users, Home, Settings, Calendar, MessageSquare, UserCheck, ClipboardList, BarChart3, AlertTriangle, Clock } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 
 interface StaffDashboardProps {
@@ -21,6 +22,8 @@ const StaffDashboard = ({ onNavigate }: StaffDashboardProps) => {
     floorStats: {}
   });
   const [loading, setLoading] = useState(true);
+  const [showComingSoonDialog, setShowComingSoonDialog] = useState(false);
+  const [comingSoonTitle, setComingSoonTitle] = useState('');
 
   useEffect(() => {
     fetchDashboardStats();
@@ -87,10 +90,14 @@ const StaffDashboard = ({ onNavigate }: StaffDashboardProps) => {
         floorStats
       });
     } catch (error: any) {
-      console.error('Error fetching dashboard stats:', error);
-    } finally {
+      console.error('Error fetching dashboard stats:', error);    } finally {
       setLoading(false);
     }
+  };
+
+  const handleComingSoon = (title: string) => {
+    setComingSoonTitle(title);
+    setShowComingSoonDialog(true);
   };
 
   if (loading) {
@@ -249,9 +256,10 @@ const StaffDashboard = ({ onNavigate }: StaffDashboardProps) => {
                 <h3 className="font-bold text-xl mb-2">Announcements</h3>
                 <p className="text-green-100">Manage university residence announcements</p>
               </CardContent>
-            </Card>
-
-            <Card className="bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-xl border-0 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+            </Card>            <Card 
+              className="bg-gradient-to-br from-indigo-500 to-purple-500 text-white shadow-xl border-0 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105"
+              onClick={() => handleComingSoon('Analytics')}
+            >
               <CardContent className="p-8 text-center">
                 <BarChart3 className="w-16 h-16 mx-auto mb-4 text-indigo-200" />
                 <h3 className="font-bold text-xl mb-2">Analytics</h3>
@@ -259,15 +267,48 @@ const StaffDashboard = ({ onNavigate }: StaffDashboardProps) => {
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-gray-600 to-gray-700 text-white shadow-xl border-0 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+            <Card 
+              className="bg-gradient-to-br from-gray-600 to-gray-700 text-white shadow-xl border-0 hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:scale-105"
+              onClick={() => handleComingSoon('Settings')}
+            >
               <CardContent className="p-8 text-center">
                 <Settings className="w-16 h-16 mx-auto mb-4 text-gray-300" />
                 <h3 className="font-bold text-xl mb-2">Settings</h3>
                 <p className="text-gray-300">Configure system settings</p>
               </CardContent>
-            </Card>
-          </div>
+            </Card>          </div>
         </div>
+
+        {/* Coming Soon Dialog */}
+        <Dialog open={showComingSoonDialog} onOpenChange={setShowComingSoonDialog}>
+          <DialogContent className="sm:max-w-[425px]">
+            <DialogHeader>
+              <DialogTitle className="text-center text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                {comingSoonTitle}
+              </DialogTitle>
+            </DialogHeader>
+            <div className="text-center py-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-10 h-10 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">Coming Soon!</h3>
+              <p className="text-gray-600 mb-4">
+                This feature is currently under development and will be available soon.
+              </p>
+              <p className="text-sm text-gray-500">
+                Thank you for your patience!
+              </p>
+            </div>
+            <div className="flex justify-center">
+              <Button 
+                onClick={() => setShowComingSoonDialog(false)}
+                className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+              >
+                Got it!
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   );
